@@ -10,6 +10,27 @@
       --bg: #ffffff;
       --text: #000000;
       --accent: #007acc;
+   
+
+Here is your **updated self-contained `index.html`** file with:
+
+- AI-relevant projects ordered by **impact and scale**.
+- Descriptions rewritten in **technical, resume-style language**.
+- All updates embedded directly and ready to deploy:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danny Basavaraju | Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #007acc;
     }
 
     [data-theme="dark"] {
@@ -95,7 +116,6 @@
   </div>
 
   <script>
-    // Dark mode toggle
     const toggleBtn = document.getElementById('toggle-theme');
     toggleBtn.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -104,7 +124,6 @@
       toggleBtn.textContent = nextTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
     });
 
-    // Updated project list
     const projects = [
       {
         title: 'twitter-auto-poster-bot-ai',
@@ -152,6 +171,7 @@
         link: 'https://github.com/deepakb66/deepakb66.github.io'
       }
     ];
+
     const container = document.getElementById('projects-container');
     projects.forEach(p => {
       const div = document.createElement('div');
@@ -163,4 +183,3 @@
 </body>
 
 </html>
-
