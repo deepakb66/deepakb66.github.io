@@ -13,6 +13,7 @@
       --flow1: #ff9966;
       --flow2: #ff5e62;
       --card-bg: #ffffff;
+      --title-color: transparent; /* Default title color */
     }
 
     [data-theme="dark"] {
@@ -22,6 +23,7 @@
       --flow1: #1a1a2e;
       --flow2: #16213e;
       --card-bg: #1c1c1e;
+      --title-color: #ffffff; /* Title color in dark mode */
     }
 
     * {
@@ -73,7 +75,7 @@
       font-size: 2.5rem;
       background: linear-gradient(to right, var(--flow1), var(--flow2));
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: var(--title-color); /* Use dynamic title color */
       font-weight: 800;
       letter-spacing: -1px;
     }
