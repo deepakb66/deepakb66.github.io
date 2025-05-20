@@ -163,6 +163,79 @@
         font-size: 1.6rem;
       }
     }
+    /* Typography & readability enhancements */
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      max-width: 900px;
+    }
+
+    .section h3 {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      color: var(--accent);
+      border-left: 4px solid var(--accent);
+      padding-left: 0.5rem;
+    }
+
+    ul.skills-list,
+    ul.cert-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .skills-list li,
+    .cert-list li {
+      background: rgba(0, 0, 0, 0.03);
+      border-left: 4px solid var(--accent);
+      margin-bottom: 0.7rem;
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .skills-list li:hover,
+    .cert-list li:hover {
+      background-color: rgba(0, 122, 204, 0.1);
+    }
+
+    .section strong {
+      font-size: 1.2rem;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Highlight tech tags inline */
+    .skills-list li,
+    .cert-list li {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .skills-list li::before,
+    .cert-list li::before {
+      content: '🔹';
+      margin-right: 0.6rem;
+      color: var(--accent);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .section p,
+      .section li {
+        font-size: 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+
+      .section h3 {
+        font-size: 1.2rem;
+      }
+    }    
   </style>
 </head>
 
