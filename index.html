@@ -8,22 +8,25 @@
   <style>
     :root {
       --bg: #ffffff;
-      --text: #000000;
-      --accent: #007acc;
-      --flow1: #00c6ff;
-      --flow2: #0072ff;
+      --text: #121212;
+      --accent: #ff5e62;
+      --flow1: #ff9966;
+      --flow2: #ff5e62;
+      --card-bg: #ffffff;
     }
 
     [data-theme="dark"] {
-      --bg: #0d1117;
-      --text: #c9d1d9;
-      --accent: #58a6ff;
-      --flow1: #1e3c72;
-      --flow2: #2a5298;
+      --bg: #0e0e10;
+      --text: #f1f1f1;
+      --accent: #ff8a00;
+      --flow1: #1a1a2e;
+      --flow2: #16213e;
+      --card-bg: #1c1c1e;
     }
 
     * {
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -32,7 +35,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 2rem;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s ease, color 0.3s ease;
       overflow-x: hidden;
       position: relative;
     }
@@ -44,23 +47,17 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(var(--flow1), var(--flow2));
+      background: radial-gradient(circle at center, var(--flow1), var(--flow2));
       background-size: 400% 400%;
-      animation: gradientFlow 15s ease infinite;
+      animation: gradientFlow 20s ease infinite;
       z-index: -1;
-      opacity: 0.07;
+      opacity: 0.08;
     }
 
     @keyframes gradientFlow {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header {
@@ -68,80 +65,102 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     h1 {
       margin: 0;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       background: linear-gradient(to right, var(--flow1), var(--flow2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
 
     #toggle-theme {
       background: transparent;
       border: 2px solid var(--accent);
       color: var(--accent);
-      padding: 0.4rem 0.9rem;
-      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-weight: bold;
     }
 
     #toggle-theme:hover {
       background-color: var(--accent);
       color: var(--bg);
+      box-shadow: 0 0 10px var(--accent);
     }
 
     .section {
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
 
     .section h2 {
-      font-size: 1.8rem;
-      border-bottom: 2px solid var(--accent);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      border-bottom: 3px solid var(--accent);
       display: inline-block;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
     }
 
     .project {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--card-bg);
       border: 1px solid var(--accent);
-      border-radius: 10px;
-      padding: 1rem;
+      border-radius: 14px;
+      padding: 1.5rem;
       margin: 1rem 0;
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project:hover {
-      transform: scale(1.02);
+      transform: scale(1.025);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
 
     .project h3 {
-      margin: 0 0 0.3rem 0;
+      margin: 0 0 0.5rem 0;
       color: var(--accent);
+      font-size: 1.4rem;
+      font-weight: 600;
     }
 
     .technologies {
       font-size: 0.9rem;
       margin-top: 0.5rem;
       color: var(--accent);
+      opacity: 0.85;
     }
 
     a {
       color: var(--accent);
+      font-weight: 500;
       text-decoration: none;
+      transition: color 0.2s ease;
     }
 
     a:hover {
       text-decoration: underline;
+      color: darkorange;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       body {
         padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
