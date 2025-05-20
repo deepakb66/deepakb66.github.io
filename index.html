@@ -1,1 +1,142 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepak Basavaraju | Portfolio</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #007acc;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    #toggle-theme {
+      background: none;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .section {
+      margin-top: 2rem;
+    }
+
+    .project {
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .project h3 {
+      margin: 0 0 0.3rem 0;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Deepak Basavaraju</h1>
+    <button id="toggle-theme">🌙 Dark Mode</button>
+  </header>
+
+  <div class="section">
+    <h2>About Me</h2>
+    <p>Software Engineer | AI & Product | IIT Delhi | IIM Calcutta | Hult MBA</p>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+    <div id="projects-container"></div>
+  </div>
+
+  <div class="section">
+    <h2>Contact</h2>
+    <p><a href="mailto:deepak.basavaraju@gmail.com">deepak.basavaraju@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/deepakbasavaraju" target="_blank">LinkedIn</a></p>
+    <p><a href="https://github.com/deepakbasavaraju" target="_blank">GitHub</a></p>
+  </div>
+
+  <script>
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      toggleBtn.textContent = nextTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+
+    // Sample projects
+    const projects = [
+      {
+        title: 'Simple Meeting Scheduler',
+        description: 'A backend-only AI-based app that schedules meetings via a smart CLI or API using Python and FastAPI.',
+        link: 'https://github.com/deepakbasavaraju/meeting-scheduler'
+      },
+      {
+        title: 'Shadows Over Hogwarts',
+        description: 'A Harry Potter-inspired turn-based strategy game with modular character logic and save/load features.',
+        link: 'https://github.com/deepakbasavaraju/shadows-over-hogwarts'
+      },
+      {
+        title: 'Pfizer Vaccine Dashboard',
+        description: 'A Tableau-based visual analysis of vaccine distribution, effectiveness, and forecasting using real-world data.',
+        link: '#'
+      },
+      {
+        title: 'AI Immigration Campaign Strategy',
+        description: 'University campaign pitch for Immigration Pathways startup to drive AI product adoption in the U.S.',
+        link: '#'
+      }
+    ];
+
+    const container = document.getElementById('projects-container');
+    projects.forEach(p => {
+      const div = document.createElement('div');
+      div.className = 'project';
+      div.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p><a href="${p.link}" target="_blank">View Project</a>`;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+
+</html>
+
